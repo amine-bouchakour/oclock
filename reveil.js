@@ -4,9 +4,8 @@ function info(){
     var heure =document.getElementById("heure_reveil").value;
     console.log(heure);
 
-    return titre,heure;
 
-    // alert("Vous avez saisi : "+ titre+ " " + heure);
+    alert("Vous avez saisi : "+ titre+ " " + heure);
     }
 
 
