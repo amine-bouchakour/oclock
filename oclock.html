@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Occlock</title>
     <link rel="stylesheet" href="oclock.css">
-    <script src="Jquery" refer></script>
-  
 </head>
+
 <body>
 
-  <?php
-$toto="bonjour";
-  ?>
-    
-<form id="Oclock">
-  <p id=Hour></p>
-</form>
+
+<section>
+    <h1>Horloge</h1>
+    <form id="Oclock">
+        <p id=Hour></p>
+    </form>
+</section>
 
 
-
-<script src="horloge.js"></script>
+<section>
+  <h1>Réveil</h1>
+  <form method="POST" class="formulaire">
+    <input type="text" id="titre" >
+      <input type="time" class=reveil><br>
+      <input id="submit" type="submit" >
+  </form>
+</section>
+<script src="Jquery"></script>
 <script src="reveil.js"></script>
+<script src="horloge.js"></script>
 </body>
 </html>

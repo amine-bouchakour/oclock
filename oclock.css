@@ -1,5 +1,9 @@
+section{
+    text-align: center;
+}
+
 p[id=Hour]{
-    margin: 5% auto;
+    margin: 0% auto;
     width: 9%;
     border: 3px black solid;
     border-radius: 0.5em;
