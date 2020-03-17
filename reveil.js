@@ -20,14 +20,12 @@ function info(){
     console.log(div);
 
     var contenu_reveil=document.createElement('article');
-    contenu_reveil_value=contenu_reveil.value="rototo";
-    console.log(contenu_reveil + " " + contenu_reveil_value);
 
 
     var section_liste=document.getElementById('liste_alarme');
     console.log(section_liste);
 
-    contenu_reveil.innerHTML="<div id=titre><div id=realtitre>" + titre + "</div></div>" + "<div id=heure>" + "<article id=slideOn>" + "<div id=slider></div>" + "</article>" + "<article id=heure><div id=realheure>" + heure  + "</div></article></div>";
+    contenu_reveil.innerHTML="<div id=titre><div id=realtitre>" + titre + "</div></div>" + "<div id=heure>" + "<article id=slideOn>" + "<div id=On></div>" + "</article>" + "<article id=heure><div id=realheure>" + heure  + "</div></article></div>";
 
     document.body.appendChild(section_liste);
     section_liste.appendChild(contenu_reveil);
@@ -38,14 +36,14 @@ function info(){
 
 
     for(i=0; i<compte; i++){
-        var slider = $('div[id=slider]')[i];
+        var slider = $('div[id=On]')[i];
         console.log(slider)
 
 
 
     }
     
-    var compte2=1;
+    var compte2=0;
     
     slider.addEventListener("click",function(){
         compte2++;
