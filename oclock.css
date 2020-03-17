@@ -39,7 +39,7 @@ article{
 
 div[id=titre]{
     width: 60%;
-    height: 100px;
+    height: auto;
     background-color: grey;
     margin: 0px auto;
     border: 2px black solid;
@@ -50,7 +50,7 @@ div[id=heure]{
     display: flex;
     flex-direction: column;
     width: 30%;
-    height: 100px;
+    height: auto;
     background-color: rgb(225, 229, 182);
     margin: 0px auto;
     border: 2px black solid;
@@ -75,8 +75,34 @@ article[id=heure]{
 
 }
 
-div[id=slider]{
+div[id=slider],div[id=On],div[id=Off]{
     width: 30px;
     background-color: rgb(233, 24, 5);
     border-radius: 10em;   
+}
+
+div[id=realheure]{
+    margin: 10% auto;
+    font-size: 2vw;
+}
+
+div[id=realtitre]{
+    margin: 5% auto;
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+
+@keyframes animation {
+    0%   {margin:0 auto; background: rgb(255, 57, 57); width: 10%; padding:2%}
+    50% {margin:10px auto; background: rgb(255, 230, 116); width: 70%; padding:2%}
+    100% {margin:13px auto; background: rgb(255, 174, 0); width: 50%; padding:1.5%}
+  }
+
+#On{
+    animation-name:animation ;
+     animation-duration :0.8s;
+     animation-timing-function :ease-in-out;
+     animation-delay :0s;
+     animation-fill-mode:forwards;
 }

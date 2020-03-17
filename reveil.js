@@ -1,3 +1,4 @@
+var compte =0;
 
 $('button[id=ajout_reveil]').click(function(){
 
@@ -26,14 +27,41 @@ function info(){
     var section_liste=document.getElementById('liste_alarme');
     console.log(section_liste);
 
-    contenu_reveil.innerHTML="<div id=titre>" + titre + "</div>" + "<div id=heure>" + "<article id=slideOn>" + "<div id=slider></div>" + "</article>" + "<article id=heure>" + heure  + "</article></div>";
+    contenu_reveil.innerHTML="<div id=titre><div id=realtitre>" + titre + "</div></div>" + "<div id=heure>" + "<article id=slideOn>" + "<div id=slider></div>" + "</article>" + "<article id=heure><div id=realheure>" + heure  + "</div></article></div>";
 
     document.body.appendChild(section_liste);
     section_liste.appendChild(contenu_reveil);
 
+    compte++;
+    console.log(compte);
+
+
+
+    for(i=0; i<compte; i++){
+        var slider = $('div[id=slider]')[i];
+        console.log(slider)
+
+
+
+    }
     
+    var compte2=1;
+    
+    slider.addEventListener("click",function(){
+        compte2++;
 
-
-
+        if(compte2%2==0){
+            var ajoutid=document.createAttribute('id');
+            ajoutid.value="On";
+            slider.setAttributeNode(ajoutid);
+            console.log(slider);
+        }
+        else{
+            var ajoutid=document.createAttribute('id');
+            ajoutid.value="Off";
+            slider.setAttributeNode(ajoutid);
+            console.log(slider);
+        }
+    });
 
     }
