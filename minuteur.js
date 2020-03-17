@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	$("#alert-zone").click(function(){$("#alert-zone").css("display","none");});
+	/*------------------------------ MINUTEUR ------------------------------*/
 	
 	$("#minute").keyup(function() {
 		
@@ -114,5 +116,73 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#alert-zone").click(function(){$("#alert-zone").css("display","none");});
+	
+	/*------------------------------ CHRONOMETRE ------------------------------*/
+	var milisec;
+	$("#start_chronometre").click(function(e){
+		e.preventDefault();
+		if(e.target.innerText != "Arrêter")
+		{
+			e.target.innerText = "Arrêter";
+			milisec = setInterval(chrono, 10);			
+		}
+		else
+		{
+			clearInterval(milisec);
+		}
+	});
+	
+	function chrono()
+	{
+		minute = parseInt($("#chrono-minute").text());
+		seconde = parseInt($("#chrono-seconde").text());
+		ms = parseInt($("#chrono-miliSeconde").text());
+		
+		if(ms < 990)
+		{
+			ms += 10;
+			if(ms < 100)
+			{
+				ms = "0"+ms;
+			}
+			$("#chrono-miliSeconde").text(ms)
+		}
+		else
+		{
+			ms = 000;
+			$("#chrono-miliSeconde").text(ms);
+			seconde += 1;
+			if(seconde < 10)
+			{
+				seconde = "0"+seconde;
+			}
+			$("#chrono-seconde").text(seconde);
+		}
+		
+		if(seconde > 59)
+		{
+			seconde = 00;
+			$("#chrono-seconde").text(seconde);
+			minute += 1;
+			$("#chrono-minute").text(minute);
+		}
+	}
+	
+	var tour = 1;
+	$("#tour").click(function(e){
+		e.preventDefault();
+		
+		minute = $("#chrono-minute").text();
+		seconde = $("#chrono-seconde").text();
+		ms = $("#chrono-miliSeconde").text();
+		
+		row = $("<tr></tr>");
+		row.append($("<td></td>").text(tour));
+		row.append($("<td></td>").text(minute));
+		row.append($("<td></td>").text(seconde));
+		row.append($("<td></td>").text(ms));
+		
+		$("#chrono-table").append(row);
+		tour++;
+	})
 });
