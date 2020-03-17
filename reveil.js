@@ -1,5 +1,3 @@
-
-
 var compte =0;
 
 $('button[id=ajout_reveil]').click(function(){
@@ -35,7 +33,6 @@ function info(){
     listeReveil.push(heure);
 
 
-
     compte++;
     console.log(compte);
 
@@ -64,43 +61,49 @@ function info(){
         }
     });
 
-
     console.log(listeReveil);
-
-
-
-
 
 }
 
 
-
 var rebours =0;
-
 
 function verif(){
 
     var today =new Date();
     var h=today.getHours();
     var mn=today.getMinutes();
-    
+    var s=today.getSeconds();
+
     h=(h>9?h:"0" + h);
     mn=(mn>9?mn:"0" + mn);
-    
-    var heureActuelle=h + ":" + mn;
+    s=(s>9?s:"0" + s);
+    var heureActuelle=h + ":" + mn + ":" + s;
     
     for(i=0; i<compte; i++){
         console.log(listeReveil[i]);
-        if(listeReveil[i]===heureActuelle){
+
+        var H=listeReveil[i]+":00";
+        console.log(H);
+
+        if(H===heureActuelle ){
             var slider = $('div[id^=O]')[i];
-            
+            console.log(slider.value);
+
             var ajoutid=document.createAttribute('id');
             ajoutid.value="Off";
             slider.setAttributeNode(ajoutid);
             console.log(slider);
 
+
             alert("c'est de la bombe bébé !");
 
+            // if(window.confirm("Voulez vous mettre un rappel?")){
+            //     console.log("ok on fait ca");
+            // }
+            // else{
+            //     console.log("recouche toi alors...");
+            // }
 
         }
     
@@ -108,7 +111,7 @@ function verif(){
     rebours++;
     console.log(rebours);
     console.log(heureActuelle);
-
+    
 
     reload = setTimeout("verif()",1000);
     
