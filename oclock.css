@@ -76,7 +76,7 @@ article[id=heure]{
 }
 
 div[id=slider],div[id=On],div[id=Off]{
-    width: 100px;
+    width: 90px;
     height: 30px;
     background-color: rgb(233, 24, 5);
     border-radius: 10em;   
@@ -96,9 +96,9 @@ div[id=realtitre]{
 /* animation slide reveil */
 
 @keyframes animation {
-    0%   {background: rgb(255, 57, 57); width: 10%;}
-    50% {background: rgb(234, 255, 116); width: 60%;}
-    100% {width: 100px; background-color: rgb(39, 233, 5); border-radius: 10em; transform: translateX(80px) ;}
+    0%   {width: 90px; background: rgb(255, 57, 57);}
+    50% {background: rgba(255, 255, 255, 0.356); width: 60%;}
+    100% {width: 90px; background-color: rgb(39, 233, 5); border-radius: 10em; transform: translateX(90px) ;}
   }
 
 #On{
@@ -112,9 +112,9 @@ div[id=realtitre]{
 
 
 @keyframes animation1 {
-    0%   {width: 100px; background-color: rgb(39, 233, 5); border-radius: 10em; transform: translateX(80px) ;}
-    50% {background: rgb(234, 255, 116); width: 60%;}
-    100% {width: 100px; background-color: rgb(233, 24, 5); border-radius: 10em; transform: translateX(0px) ;}
+    0%   {width: 90px; background-color: rgb(39, 233, 5); border-radius: 10em; transform: translateX(90px) ;}
+    50% {background: rgba(255, 255, 255, 0.397); width: 60%;}
+    100% {width: 90px; background-color: rgb(233, 24, 5); border-radius: 10em; transform: translateX(0px) ;}
   }
 
 #Off{
