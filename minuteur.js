@@ -59,180 +59,56 @@ $(document).ready(function() {
 		}
 	}
 	
-// $("#add_minute").click(function(e)
-	// {
-		// e.preventDefault();
-		// let current_value = $("#minute").val();
+	$("button:not(#start_minuteur)").click(function(e){
+		e.preventDefault();
 		
-		// if(current_value == "")
-		// {
-			// current_value = 0;
-		// }
-		// else
-		// {
-			// current_value = parseInt($("#minute").val());
-			// if(current_value < 59)
-			// {
-				// current_value += 1;
-			// }
-			// else
-			// {
-				// current_value = "0";
-			// }			
-		// }
-		// $("#minute").val(current_value);
-	// });
-	
-	// $("#add_seconde").click(function(e)
-	// {
-		// e.preventDefault();
-		// let current_value = $("#seconde").val();
-		// if(current_value == "")
-		// {
-			// current_value = 0;
-		// }
-		// else
-		// {
-			// current_value = parseInt($("#seconde").val());
-			// if(current_value < 59)
-			// {
-				// current_value += 1;
-			// }
-			// else
-			// {
-				// current_value = "0";
-			// }			
-		// }
-		// $("#seconde").val(current_value);
-	// });
-	
-	// $("#del_minute").click(function(e)
-	// {
-		// e.preventDefault();
-		// let current_value = $("#minute").val();
-		
-		// if(current_value == "")
-		// {
-			// current_value = 0;
-		// }
-		// else
-		// {
-			// current_value = parseInt($("#minute").val());
-			// if(current_value > 0)
-			// {
-				// current_value -= 1;
-			// }
-			// else
-			// {
-				// current_value = "0";
-			// }			
-		// }
-		// $("#minute").val(current_value);
-	// });
-	
-	// $("#del_seconde").click(function(e)
-	// {
-		// e.preventDefault();
-		// let current_value = $("#seconde").val();
-		// if(current_value == "")
-		// {
-			// current_value = 0;
-		// }
-		// else
-		// {
-			// current_value = parseInt($("#seconde").val());
-			// if(current_value > 0)
-			// {
-				// current_value -= 1;
-			// }
-			// else
-			// {
-				// current_value = "0";
-			// }			
-		// }
-		// $("#seconde").val(current_value);
-	// });
-	// {
-		// e.preventDefault();
-		// let current_value = $("#seconde").val();
-		// if(current_value == "")
-		// {
-			// current_value = 0;
-		// }
-		// else
-		// {
-			// current_value = parseInt($("#seconde").val());
-			// if(current_value > 0)
-			// {
-				// current_value -= 1;
-			// }
-			// else
-			// {
-				// current_value = "0";
-			// }			
-		// }
-		// $("#seconde").val(current_value);
-	// });
-	function generate_increment(i)
-	{
-		return function(e) 
+		if(e.target.id == "add_minute" || e.target.id == "del_minute")
 		{
-			e.preventDefault();
-			console.log("oiu");
-			if(i == 0 || i == 2)
-			{
-				current_value = $("#minute").val();
-			}
-			else if(i == 1 || i == 3)
-			{
-				current_value = $("#seconde").val();
-			}
+			current_value = $("#minute").val();			
+		}
+		else
+		{
+			current_value = $("#seconde").val();
+		}
 
-			if(current_value == "")
+		if(current_value == "")
+		{
+			current_value = 0;
+		}
+		else
+		{
+			current_value = parseInt(current_value);
+			if(e.target.id == "add_minute" || e.target.id == "add_seconde")
 			{
-				current_value = 0;
-			}
-			else
-			{
-				current_value = parseInt(current_value);
-				if(i == 0 || i == 1)
+				if(current_value < 59)
 				{
-					if(current_value < 59)
-					{
-						current_value += 1;
-					}
-					else
-					{
-						current_value = "0";
-					}			
+					current_value += 1;
 				}
 				else
 				{
-					if(current_value > 0)
-					{
-						current_value -= 1;
-					}
-					else
-					{
-						current_value = "0";
-					}			
-				}
-			}
-			
-			if(i == 0 || i == 2)
-			{
-				$("#minute").val(current_value);
+					current_value = "0";
+				}			
 			}
 			else
 			{
-				$("#seconde").val(current_value);
+				if(current_value > 0)
+				{
+					current_value -= 1;
+				}
+				else
+				{
+					current_value = "0";
+				}			
 			}
 		}
-	}
-	
-	buttons = $("button");
-	for(var i = 0; i<4;i++)
-	{
-		buttons[i].click(generate_increment(i));
-	}
+		
+		if(e.target.id == "add_minute" || e.target.id == "del_minute")
+		{
+			$("#minute").val(current_value);
+		}
+		else
+		{
+			$("#seconde").val(current_value);
+		}
+	});
 });
