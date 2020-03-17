@@ -6,8 +6,6 @@ $('button[id=ajout_reveil]').click(function(){
 
 });
 
-
-
 function info(){
 
     var titre =document.getElementById("titre_reveil").value;
@@ -33,12 +31,9 @@ function info(){
     compte++;
     console.log(compte);
 
-
-
     for(i=0; i<compte; i++){
         var slider = $('div[id^=O]')[i];
         console.log(slider)
-
     }
     
     var compte2=0;
