@@ -36,10 +36,8 @@ function info(){
 
 
     for(i=0; i<compte; i++){
-        var slider = $('div[id=On]')[i];
+        var slider = $('div[id^=O]')[i];
         console.log(slider)
-
-
 
     }
     
