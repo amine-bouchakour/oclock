@@ -27,5 +27,9 @@
 			<button id="start_minuteur">Start</button>
 		</form>
 
+
+		<div id="alert-zone">
+			<p></p>
+		</div>
 	</body>
 </html>

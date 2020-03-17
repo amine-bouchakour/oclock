@@ -37,6 +37,8 @@ $(document).ready(function() {
 			if(seconde.val() == 0)
 			{
 				$("#start_minuteur").css("display","block");
+				$("#alert-zone").css("display","flex");
+				$("#alert-zone").children()[0].innerText = "Le temps est écoulé";
 				clearInterval(seconds);
 			}
 			else
@@ -111,4 +113,6 @@ $(document).ready(function() {
 			$("#seconde").val(current_value);
 		}
 	});
+
+	$("#alert-zone").click(function(){$("#alert-zone").css("display","none");});
 });
