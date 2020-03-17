@@ -101,7 +101,7 @@ div[id=realtitre]{
 
 #On{
     animation-name:animation ;
-     animation-duration :0.5s;
+     animation-duration :0.4s;
      animation-timing-function :ease-in-out;
      animation-delay :0s;
      animation-fill-mode:forwards;
@@ -117,7 +117,7 @@ div[id=realtitre]{
 
 #Off{
     animation-name:animation1 ;
-     animation-duration :0.5s;
+     animation-duration :0.4s;
      animation-timing-function :ease-in-out;
      animation-delay :0s;
      animation-fill-mode:forwards;
