@@ -1,3 +1,5 @@
+
+
 var compte =0;
 
 $('button[id=ajout_reveil]').click(function(){
@@ -5,6 +7,8 @@ $('button[id=ajout_reveil]').click(function(){
     info();
 
 });
+
+let listeReveil = [];
 
 function info(){
 
@@ -28,12 +32,17 @@ function info(){
     document.body.appendChild(section_liste);
     section_liste.appendChild(contenu_reveil);
 
+    listeReveil.push(heure);
+
+
+
     compte++;
     console.log(compte);
 
     for(i=0; i<compte; i++){
         var slider = $('div[id^=O]')[i];
-        console.log(slider)
+        console.log(slider);
+
     }
     
     var compte2=0;
@@ -55,4 +64,53 @@ function info(){
         }
     });
 
+
+    console.log(listeReveil);
+
+
+
+
+
+}
+
+
+
+var rebours =0;
+
+
+function verif(){
+
+    var today =new Date();
+    var h=today.getHours();
+    var mn=today.getMinutes();
+    
+    h=(h>9?h:"0" + h);
+    mn=(mn>9?mn:"0" + mn);
+    
+    var heureActuelle=h + ":" + mn;
+    
+    for(i=0; i<compte; i++){
+        console.log(listeReveil[i]);
+        if(listeReveil[i]===heureActuelle){
+            var slider = $('div[id^=O]')[i];
+            
+            var ajoutid=document.createAttribute('id');
+            ajoutid.value="Off";
+            slider.setAttributeNode(ajoutid);
+            console.log(slider);
+
+            alert("c'est de la bombe bébé !");
+
+
+        }
+    
     }
+    rebours++;
+    console.log(rebours);
+    console.log(heureActuelle);
+
+
+    reload = setTimeout("verif()",1000);
+    
+}
+verif();
