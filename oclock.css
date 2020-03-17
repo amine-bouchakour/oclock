@@ -1,6 +1,15 @@
 section{
     text-align: center;
 }
+section[id=liste_alarme]{
+    height: auto;
+    margin:2% auto;
+    padding: 1%;
+    width: 40%;
+    border: 2px black solid;
+    background-color: burlywood;
+    border-radius: 1em;
+}
 
 p[id=Hour]{
     margin: 0% auto;
@@ -13,4 +22,61 @@ p[id=Hour]{
     background: #333333;
     text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
     box-shadow: 8px 8px 4px 0px rgba(47, 45, 45, 0.75);
+}
+
+article{
+    margin:1% 0;
+    width: 100%;
+    height: 120px;
+    border: 2px black solid;
+    padding:0.2%;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: cyan;
+}
+
+div[id=titre]{
+    width: 60%;
+    height: 100px;
+    background-color: grey;
+    margin: 0px auto;
+    border: 2px black solid;
+    border-radius: 1em;
+}
+
+div[id=heure]{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100px;
+    background-color: rgb(225, 229, 182);
+    margin: 0px auto;
+    border: 2px black solid;
+    border-radius: 1em;
+}
+
+article[id=slideOn]{
+    height: 30%;
+    width: 80%;
+    margin: 0 auto;
+    border: 2px black solid;
+    background-color: rgb(229, 186, 182);
+
+}
+
+article[id=heure]{
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    border: 2px black solid;
+    background-color: rgb(229, 186, 182);
+
+}
+
+div[id=slider]{
+    width: 30px;
+    background-color: rgb(233, 24, 5);
+    border-radius: 10em;   
 }

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Occlock</title>
     <link rel="stylesheet" href="oclock.css">
+    <script src="Jquery" async></script>
+    <script src="reveil.js" async></script>
 </head>
 
 <body>
@@ -12,16 +14,17 @@
 
 <section>
   <h1>Réveil</h1>
-  <form method="POST" id="formulaire_reveil">
+  <form id="formulaire_reveil">
     <input type="text" id="titre_reveil" placeholder="Titre du réveil"><br>
       <input type="time" id="heure_reveil"><br>
-      <input type="submit" id="ajout_reveil">
+      <button type="button" id="ajout_reveil">valider</button>
   </form>
 </section>
 
+<section id="liste_alarme">
 
-<script src="Jquery"></script>
-<script src="reveil.js"></script>
-<script src="horloge.js"></script>
+</section>
+
+
 </body>
 </html>
