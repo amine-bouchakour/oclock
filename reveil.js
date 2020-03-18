@@ -24,7 +24,6 @@ function info(){
 
     var contenu_reveil=document.createElement('article');
 
-
     var section_liste=document.getElementById('liste_alarme');
     console.log(section_liste);
 
@@ -35,14 +34,14 @@ function info(){
 
     listeReveil.push(heure);
 
-
     compte++;
     console.log(compte);
 
     for(i=0; i<compte; i++){
         var slider = $('div[id^=O]')[i];
+        var slider_value=slider.id;
+        console.log(slider_value);
         console.log(slider);
-
     }
     
     var compte2=0;
@@ -50,11 +49,16 @@ function info(){
     slider.addEventListener("click",function(){
         compte2++;
 
-            if(compte2%2==0){
+        var slide = $('div[id=stop]');
+        console.log(slide.id);
+
+            if(compte2%2==0 || slider.id=="stop" ){
                 var ajoutid=document.createAttribute('id');
                 ajoutid.value="On";
                 slider.setAttributeNode(ajoutid);
                 console.log(slider);
+                compte2++;
+
             }
             else{
                 var ajoutid=document.createAttribute('id');
@@ -62,8 +66,6 @@ function info(){
                 slider.setAttributeNode(ajoutid);
                 console.log(slider);
         };
-
-        
 
     });
 
@@ -74,7 +76,6 @@ else{
 }
 
 }
-
 
 var rebours =0;
 
@@ -98,19 +99,17 @@ function alarme(){
 
         if(H===heureActuelle){
 
-
-
             var slider = $('div[id^=O]')[i];
-            console.log(slider.value);
 
+            console.log(slider.id);
 
+            if(slider.id=="On"){
 
             var ajoutid=document.createAttribute('id');
-            ajoutid.value="Off1";
+            ajoutid.value="stop";
             slider.setAttributeNode(ajoutid);
-            console.log(slider);
-
             player.play();
+        }
 
         }
     
@@ -123,4 +122,5 @@ function alarme(){
     reload = setTimeout("alarme()",1000);
     
 }
+
 alarme();

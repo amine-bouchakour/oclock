@@ -85,7 +85,7 @@ content: 'Désactive';
 color: white;
 }
 
-div[id=Off1]:before{
+div[id=stop]:before{
 font-size: 1.2vw;
 content: 'Passée';
 color: white;
