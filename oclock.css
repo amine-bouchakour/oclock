@@ -74,15 +74,25 @@ article[id=heure]{
 }
 
 div[id=On]:before{
-    font-size: x-large;
+font-size:  22px;
 content: 'Active';
 color: white;
 }
 
 div[id=Off]:before{
-    font-size: x-large;
-content: 'Passé';
+font-size: 21px;
+content: 'Désactive';
 color: white;
+}
+
+div[id=Off1]:before{
+font-size: 1.2vw;
+content: 'Passée';
+color: white;
+width: 103px;
+padding: 0% 25% 4%;
+border-radius: 0.3em;
+background: rgb(255, 57, 57);
 }
 
 

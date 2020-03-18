@@ -104,10 +104,10 @@ function alarme(){
             var slider = $('div[id^=O]')[i];
             console.log(slider.value);
 
-            
+
 
             var ajoutid=document.createAttribute('id');
-            ajoutid.value="Off";
+            ajoutid.value="Off1";
             slider.setAttributeNode(ajoutid);
             console.log(slider);
 
