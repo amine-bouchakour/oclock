@@ -1,4 +1,5 @@
 var compte =0;
+var player = document.querySelector('#audioPlayer');
 
 $('button[id=ajout_reveil]').click(function(){
 
@@ -87,6 +88,8 @@ function verif(){
         console.log(H);
 
         if(H===heureActuelle ){
+
+
             var slider = $('div[id^=O]')[i];
             console.log(slider.value);
 
@@ -95,15 +98,7 @@ function verif(){
             slider.setAttributeNode(ajoutid);
             console.log(slider);
 
-
-            alert("c'est de la bombe bébé !");
-
-            // if(window.confirm("Voulez vous mettre un rappel?")){
-            //     console.log("ok on fait ca");
-            // }
-            // else{
-            //     console.log("recouche toi alors...");
-            // }
+            player.play();
 
         }
     
