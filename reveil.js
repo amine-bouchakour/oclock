@@ -56,12 +56,14 @@ function info(){
                 ajoutid.value="On";
                 slider.setAttributeNode(ajoutid);
                 console.log(slider);
+                return true;
             }
             else{
                 var ajoutid=document.createAttribute('id');
                 ajoutid.value="Off";
                 slider.setAttributeNode(ajoutid);
                 console.log(slider);
+                return false;
         };
 
     });
@@ -77,7 +79,7 @@ else{
 
 var rebours =0;
 
-function verif(){
+function alarme(){
 
     var today =new Date();
     var h=today.getHours();
@@ -91,17 +93,18 @@ function verif(){
     
     for(i=0; i<compte; i++){
         console.log(listeReveil[i]);
-
-
-
+        
         var H=listeReveil[i]+":00";
         console.log(H);
 
         if(H===heureActuelle){
 
 
+
             var slider = $('div[id^=O]')[i];
             console.log(slider.value);
+
+            
 
             var ajoutid=document.createAttribute('id');
             ajoutid.value="Off";
@@ -118,7 +121,7 @@ function verif(){
     console.log(heureActuelle);
     
 
-    reload = setTimeout("verif()",1000);
+    reload = setTimeout("alarme()",1000);
     
 }
-verif();
+alarme();
