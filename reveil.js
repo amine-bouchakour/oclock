@@ -50,21 +50,20 @@ function info(){
     slider.addEventListener("click",function(){
         compte2++;
 
-            
             if(compte2%2==0){
                 var ajoutid=document.createAttribute('id');
                 ajoutid.value="On";
                 slider.setAttributeNode(ajoutid);
                 console.log(slider);
-                return true;
             }
             else{
                 var ajoutid=document.createAttribute('id');
                 ajoutid.value="Off";
                 slider.setAttributeNode(ajoutid);
                 console.log(slider);
-                return false;
         };
+
+        
 
     });
 
