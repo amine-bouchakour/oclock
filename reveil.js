@@ -7,10 +7,11 @@ $('button[id=ajout_reveil]').click(function(){
 
 });
 
-let listeReveil = [];
+var listeReveil = [];
+
 
 function info(){
-
+    
     var titre =document.getElementById("titre_reveil").value;
     var heure =document.getElementById("heure_reveil").value;
 
@@ -29,6 +30,7 @@ function info(){
 
     contenu_reveil.innerHTML="<div id=titre><div id=realtitre>" + titre + "</div></div>" + "<div id=heure>" + "<article id=slideOn>" + "<div id=On></div>" + "</article>" + "<article id=heure><div id=realheure>" + heure  + "</div></article></div>";
 
+
     document.body.appendChild(section_liste);
     section_liste.appendChild(contenu_reveil);
 
@@ -42,7 +44,7 @@ function info(){
         var slider_value=slider.id;
         console.log(slider_value);
         console.log(slider);
-    }
+    };
     
     var compte2=0;
     
@@ -73,9 +75,10 @@ function info(){
 }
 else{
     alert("Merci de préciser l'heure du réveil");
-}
+};
 
-}
+};
+
 
 var rebours =0;
 
@@ -91,29 +94,62 @@ function alarme(){
     s=(s>9?s:"0" + s);
     var heureActuelle=h + ":" + mn + ":" + s;
     
-    for(i=0; i<compte; i++){
+
+    var titre =document.getElementById("titre_reveil").value;
+    var nb_reveil=$("div[id=titre]").length;
+    console.log(nb_reveil);
+
+    for(i=0; i<nb_reveil; i++){
         console.log(listeReveil[i]);
         
         var H=listeReveil[i]+":00";
+        var T=titre;
+
+        console.log(T);
         console.log(H);
 
         if(H===heureActuelle){
 
             var slider = $('div[id^=O]')[i];
 
-            console.log(slider.id);
+
+
 
             if(slider.id=="On"){
+             
+            let nopopup=document.createElement('div');
+            let nopopup_id=document.createAttribute('id');
+            nopopup_id.value="Yes";
+            nopopup.setAttributeNode(nopopup_id);
+            nopopup.innerHTML=T + "<br/><button type=button id=arreter >Arreter</button>";
+
+            document.body.append(nopopup);
+            
 
             var ajoutid=document.createAttribute('id');
             ajoutid.value="stop";
             slider.setAttributeNode(ajoutid);
-            player.play();
-        }
 
-        }
-    
-    }
+
+
+
+            
+
+            // Lancement sonore du réveil
+            player.play();
+        };
+
+        $('button[id=arreter]').click(function(){
+            player.pause();
+            var divyes=$('div[id=Yes]')[0];
+            var divyes1=document.createAttribute('id');
+            divyes1.value="No";
+            divyes.setAttributeNode(divyes1);
+        });
+
+        };
+
+    };
     rebours++;
     console.log(rebours);
     console.log(heureActuelle);
@@ -124,3 +160,12 @@ function alarme(){
 }
 
 alarme();
+
+
+var slider = $('div[id^=O]');
+console.log(slider);
+
+for(i=0; i<slider.length; i++){
+    console.log(slider[i]);
+}
+
