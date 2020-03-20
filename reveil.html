@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Occlock</title>
     <link rel="stylesheet" href="oclock.css">
-    <script src="Jquery.js" async></script>
-    <script src="reveil.js" async></script>
+    <script src="Jquery.js"></script>
+    
+
 </head>
 
 <body>
 
+  <section id="horloge">
+    <h1>Horloge</h1>
+    <form id="Oclock">
+        <p id=Hour></p>
+    </form>
+</section>
 
+
+<div id ="les_reveils">
 <section id="formulaire_reveil">
-  <h1>Réveil</h1>
+  <h1>Mon Réveil</h1>
   <form id="formulaire_reveil">
     <input type="text" id="titre_reveil" placeholder="Titre du réveil"><br>
       <input type="time" id="heure_reveil" min="00:00" max="18:00" required><br>
@@ -24,7 +33,9 @@
 <section id="liste_alarme">
 
 </section>
-
+</div>
 <audio id="audioPlayer" src="reveil.wav"></audio>
+<script src="reveil.js"></script>
+<script src="horloge.js"></script>
 </body>
 </html>

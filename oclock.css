@@ -1,3 +1,34 @@
+body{
+    background-color: whitesmoke;
+}
+
+input[id=titre_reveil],input[id=heure_reveil],button[id=ajout_reveil],button[id=arreter]{
+border-radius: 0.5em;
+font-size:20px;
+text-align: center;
+}
+
+section[id=horloge]{
+    font-size: xx-large;
+    background-color: #ff8000b0;
+    height: 200px;
+    margin: 0 auto;
+    width: 80%;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+div[id=les_reveils]{
+    font-size: xx-large;
+    background-color: #c300ffb4;
+    height: auto;
+    margin: 0 auto;
+    padding: 1% 0% 2% 0%;
+    width: 90%;
+    margin: 15px auto;
+    border-radius: 2em;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
 section{
     text-align: center;
 }
@@ -13,7 +44,7 @@ section[id=liste_alarme]{
 
 p[id=Hour]{
     margin: 0% auto;
-    width: 9%;
+    width: 12%;
     border: 3px black solid;
     border-radius: 0.5em;
     font-size: 2.5vw;
@@ -142,12 +173,12 @@ div[id=realtitre]{
 
 
 div[id=Yes]{
-width: 300px;
-height: 200px;
+width: 600px;
+height: 300px;
 margin: 0 auto;
 color: white;
 text-align: center;
-font-size: 3vw;
+font-size: 4vw;
 border-radius: 1em;
 border: 4px black solid;
 background-color: tomato;
@@ -159,3 +190,4 @@ justify-content: space-evenly;
 div[id=No]{
 opacity: 0;
 }
+
