@@ -13,8 +13,10 @@ var titreReveil = [];
 
 function info(){
     
-    var titre =document.getElementById("titre_reveil").value;
     var heure =document.getElementById("heure_reveil").value;
+    var titre =document.getElementById("titre_reveil").value;
+
+
 
     if(heure!==''){
 
@@ -41,14 +43,14 @@ function info(){
     }
     titreReveil.push(titre);
     compte++;
-    console.log(compte);
+    // console.log(compte);
 
 
 
     for(i=0; i<compte; i++){
     var slider = $('div[id^=O]')[i];
-    console.log(slider);
-    console.log(slider.id);
+    // console.log(slider);
+    // console.log(slider.id);
     };
     
     var compte2=0;
@@ -192,7 +194,7 @@ function alarme(){
     
 
     reload = setTimeout("alarme()",1000);
-    
+
 
 }
 
