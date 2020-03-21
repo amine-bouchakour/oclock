@@ -1,6 +1,44 @@
 var compte =0;
 var player = document.querySelector('#audioPlayer');
 
+$('#oclock').click(function(){
+
+    // alert($(this).attr('class'));
+
+    $.ajax({
+
+        url:"oclock.php",
+        type : "GET",
+        data:{},
+    }).done(function(Data){
+        console.log("Réussi");
+        $('body').empty();
+        $('body').append(Data);
+    });
+
+
+});
+
+
+
+$('#reveil').click(function(){
+
+    // alert($(this).attr('class'));
+
+    $.ajax({
+
+        url:"reveil.html",
+        type : "GET",
+        data:{},
+    }).done(function(Data){
+        console.log("Réussi");
+        $('body').empty();
+        $('body').append(Data);
+    });
+
+
+});
+
 $('button[id=ajout_reveil]').click(function(){
 
     info();
